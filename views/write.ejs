@@ -1,0 +1,56 @@
+<%- include('partials/header.ejs') %>
+    <div class="navbar">
+        <h1>BlogIt</h1>
+        <nav class="navlink">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <a href="/write" class="active">Write</a>
+            <button class="login">Login</button>
+        </nav>
+    </div>
+    <div class="write-blog">
+        <h1>Write Your Blog</h1>
+        <form action="/submit" method="POST">
+            <div class="title form-item">
+                <input type="text" id="blog-title" name="blog-title" placeholder="Title" required>
+            </div>
+            <div class="author form-item">
+                <input type="text" id="blog-author" name="blog-author" placeholder="Author" required>
+            </div>
+            <div class="content form-item">
+                <textarea id="blog-content" name="blog-content" placeholder="Write Your Content Here..."></textarea>
+            </div>
+            <div class="form-footer">
+                <div class="catagory">
+                    <label for="blog-catagory">Catagory:</label>
+                    <input list="catagories" name="blog-catagory" id="blog-catagory">
+                    <datalist id="catagories">
+                        <option value="Art">
+                        <option value="Music">
+                        <option value="Cinema">
+                        <option value="Design">
+                        <option value="Tech">
+                        <option value="Food">
+                    </datalist>
+                </div>
+                <div class="visibility form-item">
+                    <label for="public">
+                        <input type="radio" id="public" name="access" checked>
+                        <span>Public</span>
+                    </label>
+                    <label for="private">
+                        <input type="radio" id="private" name="access">
+                        <span>Private</span>
+                    </label>
+                </div>
+                
+            </div>
+            <div class="submit">
+                <button type="submit">Save It</button>
+            </div>
+            
+            
+        </form>
+    </div>
+<%- include('partials/footer.ejs') %>
